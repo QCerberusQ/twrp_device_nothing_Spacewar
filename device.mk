@@ -39,6 +39,10 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     otapreopt_script
 
+#Touch
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/root/system/usr/idc/fts_ts.idc:system/usr/idc/fts_ts.idc
+
 # Boot control HAL
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl-qti.recovery \
