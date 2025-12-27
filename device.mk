@@ -39,11 +39,21 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     otapreopt_script
 
-# Input Configuration (Düzeltilmiş)
+# Kernel modules for recovery (stock vendor)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/lib/modules/fts_tp.ko:$(TARGET_COPY_OUT_RECOVERY)/root/lib/modules/fts_tp.ko \
-    $(LOCAL_PATH)/recovery/root/system/usr/idc/fts_ts.idc:$(TARGET_COPY_OUT_RECOVERY)/root/system/usr/idc/fts_ts.idc \
-    $(LOCAL_PATH)/recovery/root/vendor/usr/idc/fts_ts.idc:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/usr/idc/fts_ts.idc
+    $(LOCAL_PATH)/recovery/root/lib/modules/msm_drm.ko:$(TARGET_COPY_OUT_RECOVERY)/root/lib/modules/msm_drm.ko \
+    $(LOCAL_PATH)/recovery/root/lib/modules/q6_pdr_dlkm.ko:$(TARGET_COPY_OUT_RECOVERY)/root/lib/modules/q6_pdr_dlkm.ko \
+    $(LOCAL_PATH)/recovery/root/lib/modules/q6_notifier_dlkm.ko:$(TARGET_COPY_OUT_RECOVERY)/root/lib/modules/q6_notifier_dlkm.ko \
+    $(LOCAL_PATH)/recovery/root/lib/modules/snd_event_dlkm.ko:$(TARGET_COPY_OUT_RECOVERY)/root/lib/modules/snd_event_dlkm.ko \
+    $(LOCAL_PATH)/recovery/root/lib/modules/apr_dlkm.ko:$(TARGET_COPY_OUT_RECOVERY)/root/lib/modules/apr_dlkm.ko \
+    $(LOCAL_PATH)/recovery/root/lib/modules/adsp_loader_dlkm.ko:$(TARGET_COPY_OUT_RECOVERY)/root/lib/modules/adsp_loader_dlkm.ko \
+    $(LOCAL_PATH)/recovery/root/lib/modules/goodix_fp.ko:$(TARGET_COPY_OUT_RECOVERY)/root/lib/modules/goodix_fp.ko
+
+# IDC for touchscreen
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/root/system/usr/idc/fts_ts.idc:$(TARGET_COPY_OUT_RECOVERY)/root/system/usr/idc/fts_ts.idc
+
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
